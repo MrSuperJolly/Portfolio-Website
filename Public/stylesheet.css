@@ -1,0 +1,239 @@
+
+
+* {
+    height: 100%;
+    padding: 0;
+    border:0;
+    margin:0;
+    background-color:#FFFAFA;
+    font-family: 'Roboto', sans-serif;
+    
+    
+}
+
+html{
+    background-color:#FFFAFA;
+}
+
+
+.container{
+    
+    display: grid;
+    grid-template-columns: 1fr 42rem 1fr;
+    grid-template-rows: 10% 6.25rem 3.125rem 7rem 660px;
+    grid-template-areas:
+    "header header header"
+    ".  logo ."
+    ". nav . "
+    ". project_title."
+    ". projects . ";
+
+    justify-items: center;
+    grid-row-gap: 2rem;
+    
+}
+
+#logo{
+  grid-area: logo;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    
+}
+
+#nav{
+    grid-area:nav;
+    width : 60%;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    font-size: 20px;
+   
+}
+
+#project_title{
+   
+    grid-area: project_title;
+
+}
+
+
+#projects{
+    grid-area: projects;
+    display:grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    grid-row-gap: 2rem;
+    grid-column-gap: 2rem;
+   
+}
+
+#project_buttons{
+
+    padding: 0;
+    border: none;
+    background: none;
+    outline:none;
+    
+}
+
+#projects li{
+    width:100%;
+    height:100%;
+    list-style-type: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    text-align: center;
+      
+}
+
+#projects li:hover{
+    
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+      
+}
+
+#project_image{
+    height: 200px;
+    width: 200px;
+}
+
+#email_link, #about_link{
+    text-decoration: none;
+    color:#808080;
+   
+}
+
+#email_icon, #about_icon, #seperator{
+    color: #808080;
+    font-size:2rem;
+   
+}
+
+.project_modal {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+overflow: auto;
+}
+
+/* Modal Content/Box */
+.project_content {
+background-color: #FFFAFA;
+margin: 10% auto; /* 15% from the top and centered */
+width: 62rem; 
+height: 25rem;
+display: grid;
+grid-template-columns: 25rem 35rem 2rem;
+grid-template-rows: 20% 60% 20%;
+grid-template-areas:
+    "project_image project_title close"
+    "project_image project_description ."
+    "project_image checkitout_btn .";
+   
+
+animation-name: animateopen;
+animation-duration: 0.4s;
+
+}
+
+.project_content_noimage {
+    background-color: #FFFAFA;
+    margin: 10% auto; /* 15% from the top and centered */
+    width: 37rem; 
+    height: 25rem;
+    display: grid;
+    grid-template-columns: 35rem 2rem;
+    grid-template-rows: 20% 60% 20%;
+    grid-template-areas:
+        "project_title close"
+        "project_description ."
+        "checkitout_btn .";
+       
+    
+    animation-name: animateopen;
+    animation-duration: 0.4s;
+    
+    }
+
+
+#checkitout_btn {
+    display:grid;
+    grid-area: checkitout_btn;
+    height:3rem;
+    width: 10rem;
+    justify-self: center;
+    align-self: center;
+    background-color: rgb(229, 38, 30); 
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: 2px solid rgb(229, 38, 30);
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+   
+}
+#checkitout_btn:hover {
+    background-color: white;
+    color: black;
+   
+    
+}  
+#checkitout_btn:focus {
+    outline:none;
+}  
+
+
+#project_title{
+    grid-area: project_title;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+#project_description{
+    grid-area: project_description;
+    padding: 0 2rem;
+    overflow: auto;
+}
+.project_image{
+grid-area: project_image;
+object-fit: cover;
+width:100%;
+height:100%;
+}
+/* The Close Button */
+.close {
+color: #aaa;
+
+font-size: 28px;
+font-weight: bold;
+grid-area: close;
+}
+
+.close:hover,.close:focus {
+color: red;
+text-decoration: none;
+cursor: pointer;
+}
+
+@keyframes animateopen {
+from { opacity: 0}
+to {  opacity: 1}
+}
+
+
+
+
+
+
+
